@@ -14,3 +14,20 @@ const same = () => {
 same([1,2,3], [4,1,9]) // true
 same([1,2,3], [1,9]) // false
 same([1,2,1], [4,4,1]) // false (must be same frequency)
+
+
+
+// 2. Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+const validAnagram = (str1, str2) => {
+
+}
+
+// Test cases
+console.log(validAnagram('', '')); // true
+console.log(validAnagram('aaz', 'zza')); // false
+console.log(validAnagram('anagram', 'nagaram')); // true
+console.log(validAnagram('rat', 'car')); // false
+console.log(validAnagram('awesome', 'awesom')); // false
+console.log(validAnagram('qwerty', 'qeywrt')); // true
+console.log(validAnagram('texttwisttime', 'timetwisttext')); // true
