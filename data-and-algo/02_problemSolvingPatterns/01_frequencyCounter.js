@@ -18,7 +18,7 @@ same([1,2,1], [4,4,1]) // false (must be same frequency)
 
 
 // 2. Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
-
+// There is a good way (O(n)) but there is a slightly better way to decrease the Space complexity to O(1)
 const validAnagram = (str1, str2) => {
 
 }
