@@ -1,4 +1,5 @@
 // 1. Given a sorted array of integers, find the first pair of numbers whose sum is zero. Return the pair as an array, or null if no such pair exists.
+// Remember that the array has to be sorted. This is a good opportunity to use the multiple pointers pattern.
 
 const sumZero = (arr) => {
 
