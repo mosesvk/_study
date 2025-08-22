@@ -41,3 +41,4 @@ function createLinkedList(arr) {
 const list = createLinkedList([1, 2, 3, 4, 5]);
 console.log("Created from array [1,2,3,4,5]:");
 console.log("Head value:", list.val, "Next value:", list.next.val);
+// console.log("List:", list);
