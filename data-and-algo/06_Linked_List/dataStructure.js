@@ -12,16 +12,70 @@ class ListNode {
     }
 }
 
-// 2. Creating nodes manually
-const node1 = new ListNode(1);
-const node2 = new ListNode(2);
-const node3 = new ListNode(3);
+// 2. Linked List Structure
+class LinkedList {
+    constructor() {
+        this.head = null
+    }
 
-node1.next = node2;
-node2.next = node3;
+    add(val) {
+        const newNode = new Node(val)
+        if (!this.head) {
+            this.head = newNode
+        } else {}
+    }
 
-console.log("Manual linked list:");
-console.log("Node 1:", node1.val, "-> Node 2:", node1.next.val, "-> Node 3:", node1.next.next.val);
+    remove(val) {
+        if (!this.head) return
+        if (this.head.val === val) {
+            this.head = this.head.next
+        } else {}
+        let current = this.head
+        while (current.next) {
+            if (current.next.val === val) {
+                current.next = current.next.next
+            }
+            current = current.next
+        }
+    }
+
+    search(val) {
+        let current = this.head
+        while (current) {
+            if (current.val === val) return true
+            current = current.next
+        }
+    }
+
+    insert(val, index) {
+        if (index < 0) return
+        if (index === 0) {
+            this.add(val)
+        }
+    }
+
+    reverse() {
+        let prev = null
+        let current = this.head
+        while (current) {
+            const next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        }
+        this.head = prev
+        return this
+    }   
+
+    print() {
+        let current = this.head
+        while (current) {
+            console.log(current.val)
+        }
+    }
+}
+
+
 
 // 3. Helper function to create from array
 function createLinkedList(arr) {
