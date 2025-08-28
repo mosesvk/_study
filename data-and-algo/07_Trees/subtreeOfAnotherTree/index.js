@@ -35,6 +35,9 @@ class Solution {
         let l = 0,
             r = 0,
             n = s.length;
+
+        //"$2$4$#$#$5$#$#|$1$2$4$#$#$5$#$#$3$#$#"
+        
         for (let i = 1; i < n; i++) {
             if (i <= r) {
                 z[i] = Math.min(r - i + 1, z[i - l]);
