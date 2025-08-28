@@ -36,18 +36,25 @@ class Solution {
             r = 0,
             n = s.length;
 
-        //"$2$4$#$#$5$#$#|$1$2$4$#$#$5$#$#$3$#$#"
-        
+        //"$ 2 $ 4 $ # $ # $ 5 $ # $ # | $ 1 $ 2 $ 4 $ #$#$5$#$#$3$#$#"
+        //           5         10      14          20   
+        //                         l
+        //                         r
+        //                             i
+        // z[i] = 0
+
         for (let i = 1; i < n; i++) {
+            const idxr = i + z[i];
+
             if (i <= r) {
                 z[i] = Math.min(r - i + 1, z[i - l]);
             }
-            while (i + z[i] < n && s[z[i]] === s[i + z[i]]) {
+            while (idxr < n && s[z[i]] === s[idxr]) {
                 z[i]++;
             }
-            if (i + z[i] - 1 > r) {
+            if (idxr - 1 > r) {
                 l = i;
-                r = i + z[i] - 1;
+                r = idxr - 1;
             }
         }
         return z;
