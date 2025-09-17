@@ -1,4 +1,4 @@
-const arr = [2, 4, 6, 8, 9, 1, 11]
+const arr = [2, 7, 3, 1, 8, 9, 5, 11]
 
 
 const mergeSort = (nums, l, r) => {
@@ -26,11 +26,11 @@ const merge = (arr, l, m, r) => {
     for (let i = 0; i < len1; i++) {
         L[i] = arr[l + i]
     }
-    for (let i = 0; i < len2; i++) {
-        R[i] = arr[m + 1 + j]
+    for (let j = 0; j < len2; j++) {
+        R[j] = arr[m + 1 + j]
     }
 
     console.log({L, R})
 }
 
-mergeSort(arr)
+mergeSort(arr, 0, arr.length - 1)
