@@ -16,6 +16,8 @@ const mergeSort = (nums, l, r) => {
 }
 
 const merge = (arr, l, m, r) => {
+
+    console.log({arr, l, m, r})
     
     let len1 = m - l + 1
     let len2 = r - m 
@@ -30,7 +32,7 @@ const merge = (arr, l, m, r) => {
         R[j] = arr[m + 1 + j]
     }
 
-    console.log({L, R})
+    
 }
 
 mergeSort(arr, 0, arr.length - 1)
