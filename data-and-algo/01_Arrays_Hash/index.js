@@ -2,12 +2,15 @@ const arr = [2, 7, 3, 1, 8, 9, 5, 11]
 
 
 const mergeSort = (nums, l, r) => {
+
+    console.log('ms', {nums, l, r})
     
     if (l < r) {
         let m  = Math.floor((l + r) / 2)
 
         mergeSort(nums, l, m)
         mergeSort(nums, m+1, r)
+
         merge(nums, l, m, r)
     }
 
