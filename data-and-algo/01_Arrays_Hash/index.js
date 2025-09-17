@@ -3,10 +3,12 @@ const arr = [2, 7, 3, 1, 8, 9, 5, 11]
 
 const mergeSort = (nums, l, r) => {
 
-    console.log('ms', {nums, l, r})
+    // console.log('ms', {nums, l, r})
     
     if (l < r) {
         let m  = Math.floor((l + r) / 2)
+
+        console.log('ms', {nums, l, r, m})
 
         mergeSort(nums, l, m)
         mergeSort(nums, m+1, r)
@@ -20,7 +22,7 @@ const mergeSort = (nums, l, r) => {
 
 const merge = (arr, l, m, r) => {
 
-    console.log({arr, l, m, r})
+    // console.log({arr, l, m, r})
     
     let len1 = m - l + 1
     let len2 = r - m 
