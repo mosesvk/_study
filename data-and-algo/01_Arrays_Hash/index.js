@@ -1,44 +1,44 @@
-const arr = [2, 7, 3, 1, 8, 9, 5, 11]
+const quickSort = (pairs) => {
+  this.quickSortHelper(pairs, 0, pairs.length - 1);
+  return pairs;
+};
 
+/**
+ * Helper function for the QuickSort algorithm
+ * @param {Pair[]} arr Array of Pair objects to be sorted
+ * @param {number} s Start index for the sorting
+ * @param {number} e End index for the sorting
+ */
+const quickSortHelper = (arr, s, e) => {
+  if (e - s + 1 <= 1) {
+    return;
+  }
 
-const mergeSort = (nums, l, r) => {
+  const pivot = arr[e]; // pivot is the last element
+  let left = s; // pointer for left side
 
-    // console.log('ms', {nums, l, r})
-    
-    if (l < r) {
-        let m  = Math.floor((l + r) / 2)
-
-        console.log('ms', {nums, l, r, m})
-
-        mergeSort(nums, l, m)
-        mergeSort(nums, m+1, r)
-
-        merge(nums, l, m, r)
+  // Partition: elements smaller than pivot on left side
+  for (let i = s; i < e; i++) {
+    if (arr[i].key < pivot.key) {
+      const tmp = arr[left];
+      arr[left] = arr[i];
+      arr[i] = tmp;
+      left++;
     }
 
-    return nums
+    console.log({left, i, pivot})
+  }
 
-}
+  // Move pivot in-between left & right sides
+  arr[e] = arr[left];
+  arr[left] = pivot;
 
-const merge = (arr, l, m, r) => {
+  // Quick sort left side
+  this.quickSortHelper(arr, s, left - 1);
 
-    // console.log({arr, l, m, r})
-    
-    let len1 = m - l + 1
-    let len2 = r - m 
+  // Quick sort right side
+  this.quickSortHelper(arr, left + 1, e);
+};
 
-    let L = new Array(len1)
-    let R = new Array(len2)
 
-    for (let i = 0; i < len1; i++) {
-        L[i] = arr[l + i]
-    }
-    for (let j = 0; j < len2; j++) {
-        R[j] = arr[m + 1 + j]
-    }
-
-    
-    
-}
-
-mergeSort(arr, 0, arr.length - 1)
+quickSort([(5, "apple"), (9, "banana"), (9, "cherry"), (1, "date"), (9, "elderberry")])
