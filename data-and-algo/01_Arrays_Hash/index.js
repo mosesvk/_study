@@ -1,5 +1,5 @@
 const quickSort = (pairs) => {
-  this.quickSortHelper(pairs, 0, pairs.length - 1);
+  quickSortHelper(pairs, 0, pairs.length - 1);
   return pairs;
 };
 
@@ -19,14 +19,17 @@ const quickSortHelper = (arr, s, e) => {
 
   // Partition: elements smaller than pivot on left side
   for (let i = s; i < e; i++) {
-    if (arr[i].key < pivot.key) {
+    // console.log({left, leftVal: arr[left], i, iVal: arr[i], pivot})
+
+    if (arr[i] < pivot) {
+        // console.log('hit')
       const tmp = arr[left];
       arr[left] = arr[i];
       arr[i] = tmp;
       left++;
     }
 
-    console.log({left, i, pivot})
+    
   }
 
   // Move pivot in-between left & right sides
@@ -34,11 +37,11 @@ const quickSortHelper = (arr, s, e) => {
   arr[left] = pivot;
 
   // Quick sort left side
-  this.quickSortHelper(arr, s, left - 1);
+  quickSortHelper(arr, s, left - 1);
 
   // Quick sort right side
-  this.quickSortHelper(arr, left + 1, e);
+  quickSortHelper(arr, left + 1, e);
 };
 
 
-quickSort([(5, "apple"), (9, "banana"), (9, "cherry"), (1, "date"), (9, "elderberry")])
+quickSort([2, 7, 3, 2, 8, 9])
