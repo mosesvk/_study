@@ -42,5 +42,6 @@
   "editor.suggest.showCustomcolors": false,
   "editor.suggest.showFolders": false,
   "editor.suggest.showTypeParameters": false,
-  "editor.suggest.showSnippets": false
+  "editor.suggest.showSnippets": false,
+  "folder-color.pathColors": []
 }
