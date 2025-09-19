@@ -10,7 +10,7 @@
   "editor.wordBasedSuggestions": "off",
   "editor.parameterHints.enabled": false,
   "editor.hover.enabled": false,
-  "editor.lightbulb.enabled": false,
+  "editor.lightbulb.enabled": "off",
   "editor.codeLens": false,
   "editor.bracketPairColorization.enabled": false,
   "editor.guides.bracketPairs": false,
