@@ -95,10 +95,13 @@ class LinkedList {
 
 // ["insertTail", 1, "insertTail", 2, "get", 1, "remove", 1, "insertTail", 2, "get", 1, "get", 0]
 const list = new LinkedList()
-list.insertHead(1)
-list.insertHead(2)
-list.insertHead(3)
+list.insertTail(1)
+list.insertTail(2)
 console.log(list.getValues())
 console.log(list.get(1))
 console.log(list.remove(1))
 console.log(list.getValues())
+list.insertTail(2)
+console.log(list.getValues())
+console.log(list.get(1))
+console.log(list.get(0))
