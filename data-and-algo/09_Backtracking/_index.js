@@ -1,12 +1,12 @@
 const combinationSum = (nums, target) => {
     const res = []
     const sub = []
-    this.backtrack(nums, target, 0, sub, res) 
+    backtrack(nums, target, 0, sub, res) 
     return res
 }
 
 const backtrack = (nums, t, i, sub, res) => {
-        console.log({t, i, sub})
+    console.log({t, i, sub})
     if (t === 0) {
         res.push([...sub])
     } else if (t < 0 || i >= nums.length) {
@@ -14,8 +14,11 @@ const backtrack = (nums, t, i, sub, res) => {
         return 
     } else {
         sub.push(nums[i])
-        this.backtrack(nums, t - nums[i], i, sub, res)
+        backtrack(nums, t - nums[i], i, sub, res)
         sub.pop() 
-        this.backtrack(nums, t, i + 1, sub, res)
+        backtrack(nums, t, i + 1, sub, res)
     }
 }
+
+combinationSum([2,5,6,9], 9)
+
