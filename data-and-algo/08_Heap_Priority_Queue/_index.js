@@ -26,7 +26,6 @@ class MinHeap {
         if (this.heap.length === 1) return this.heap.pop();
         
         const root = this.heap[0];
-        console.log({root, new:this.heap.pop()})
         this.heap[0] = this.heap.pop();
         this._bubbleDown(0);
 
