@@ -80,7 +80,7 @@ class MaxPriorityQueue {
 
 /**
  * Simple MinPriorityQueue implementation using a binary heap.
- * Provides enqueue, dequeue, and size methods.
+ * Provides enqueue, dequeue, front, and size methods.
  */
 class MinPriorityQueue {
     constructor() {
@@ -109,6 +109,14 @@ class MinPriorityQueue {
         this.heap[0] = this.heap.pop();
         this._bubbleDown(0);
         return min;
+    }
+
+    /**
+     * Returns the minimum value from the heap without removing it.
+     * @returns {number|undefined} - The minimum value, or undefined if the heap is empty.
+     */
+    front() {
+        return this.heap.length > 0 ? this.heap[0] : undefined;
     }
 
     /**
