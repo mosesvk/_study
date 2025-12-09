@@ -31,19 +31,19 @@ payload = {
 
 res = requests.post(url, json=payload)
 
-# print('status code:', res.status_code)
-# try:
-#     data = res.json() 
-#     print("Response JSON:")
-#     pprint(data)
+print('status code:', res.status_code)
+try:
+    data = res.json() 
+    print("Response JSON:")
+    pprint(data)
 
-#     with open('data/player.json', 'w') as f: 
-#         json.dump(data, f, indent=2)
+    with open('data/player.json', 'w') as f: 
+        json.dump(data, f, indent=2)
 
-#     print('\nReponse saved to data/player.json')
-# except ValueError:
-#     print("Not valid JSON from server:")
-#     print(res.text)
+    print('\nReponse saved to data/player.json')
+except ValueError:
+    print("Not valid JSON from server:")
+    print(res.text)
 
 
 qb_token = os.getenv('QB_TOKEN')
