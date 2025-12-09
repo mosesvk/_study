@@ -1,23 +1,15 @@
 import json
-import requests
-from dotenv import load_dotenv
-import os 
 
-load_dotenv() 
+with open('data/notes.txt', 'r') as f: 
+    contents = f.read() 
 
-API_URL = os.getenv('API_URL')
+# print(contents)
 
-with open('data/input.json') as f: 
-    data = json.load(f)
+player = {
+    'name': 'Mo', 
+    'makes': 74, 
+    'attempts': 100
+}
 
-print('Loaded input data:', data)
-
-res = requests.post(API_URL, json=data)
-
-print('Status:', res.status_code)
-print('Res JSON:', res.json())
-
-with open('data/output.json', 'w') as f:
-    json.dump(res.json(), f, indent=2)
-
-print('Output saved to data/output.json')
+with open('data/player.json', 'w') as f:
+    json.dump(player, f, indent=2)
