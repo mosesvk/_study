@@ -21,3 +21,4 @@ try:
 except ValueError: 
     print("Not valid JSON from server:")
     print(res.text)
+
