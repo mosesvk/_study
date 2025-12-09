@@ -1,4 +1,8 @@
 import json
+from dotenv import load_dotenv
+import os
+import requests
+from pprint import pprint
 
 with open('data/config.txt', 'r') as f: 
     contents = f.read()
@@ -12,13 +16,32 @@ data = {
     'assists': 7
 }
 
+# try: 
+#     with open('data/game_stats.json', 'w') as f: 
+#         json.dump(data, f, indent=2)
+#     print('\nReponse saved to data/player.json')
+
+# except ValueError: 
+#     print("Not valid JSON from server:")
+#     print(res.text)
+
+
+url = os.getenv('REQ_URL')
+
+
+payload = {
+    'action': 'qb_upsert', 
+    'records': 5
+}
+
+res = requests.post(url, json=payload)
+
 try: 
-    with open('data/game_stats.json', 'w') as f: 
-        json.dump(data, f, indent=2)
+    data = res.json() 
+    print('status code:', res.status_code)
+    pprint(data)
 
-    print('\nReponse saved to data/player.json')
-
-except ValueError: 
-    print("Not valid JSON from server:")
+except ValueError:
+    print('Not valid Server response') 
     print(res.text)
 
