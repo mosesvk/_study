@@ -25,6 +25,8 @@ data = {
 #     print("Not valid JSON from server:")
 #     print(res.text)
 
+load_dotenv()
+
 
 url = os.getenv('REQ_URL')
 
@@ -36,12 +38,19 @@ payload = {
 
 res = requests.post(url, json=payload)
 
-try: 
-    data = res.json() 
-    print('status code:', res.status_code)
-    pprint(data)
+# try: 
+#     data = res.json() 
+#     print('status code:', res.status_code)
+#     pprint(data)
 
-except ValueError:
-    print('Not valid Server response') 
-    print(res.text)
+# except ValueError:
+#     print('Not valid Server response') 
+#     print(res.text)
 
+
+api_key = os.getenv('API_KEY')
+
+if api_key: 
+    print('API_KEY loaded ✅')
+else: 
+    print 'missing API_KEY ❌'
